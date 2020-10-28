@@ -2,6 +2,10 @@
 
 Model Iaith Fectorau Word2vec ar sail CYMES, Corpws Ymchwil Mewnol Enfawr Safonol yr Uned Technolegau Iaith a gasglwyd o ffynonellau amrywiol at ddibenion ymchwil fel cynhyrchu modelau iaith. |  A Word2vec Language Model based on CYMES, the Language Technologies Unit Standard Large Research Corpus which was collected from various sources for research purposes including the development of language models.
 
+Gweler https://github.com/techiaith/word2vec-cy/tags am ffeil .bin y model.
+
+*See https://github.com/techiaith/word2vec-cy/tags for the model's .bin file.*
+
 I'w ddefnyddio | To use:
 
 `pip install gensim`
