@@ -1,16 +1,22 @@
 # Model Iaith Fectorau Iriaith
 
-Model Iaith Fectorau Word2vec Cymraeg ar sail CYMES, Corpws Ymchwil Mewnol Enfawr Safonol yr Uned Technolegau Iaith a gasglwyd o ffynonellau amrywiol at ddibenion ymchwil fel cynhyrchu modelau iaith. |  A Welsh Word2vec Language Model based on CYMES, the Language Technologies Unit Standard Large Research Corpus which was collected from various sources for research purposes including the development of language models.
+Model Iaith Fectorau Word2vec ar sail adnoddau ymchwil yr Uned Technolegau Iaith a gasglwyd o ffynonellau amrywiol
+
+*A Word2vec Language Model based on the Language Technologies Unit's research resources collected from various resources.*
 
 Gweler https://github.com/techiaith/word2vec-cy/tags am ffeil .bin y model.
 
 *See https://github.com/techiaith/word2vec-cy/tags for the model's .bin file.*
 
-I'w ddefnyddio | To use:
+I'w ddefnyddio:
+
+*To use:*
 
 `pip install gensim`
 
-Yna | Then:
+Yna:
+
+*Then:*
 
 ```
 import gensim
@@ -41,7 +47,13 @@ print (similar_to_athro)
 #  ('hyfforddai', 0.44232702255249023)]
 ```
 
-For a list of all words and their corresponding vectors:  
+Ariannwyd creu'r model hwn gan Lywodraeth Cymru fel rhan o broject Iriaith.
+
+*The creation of this model was financed by the Welsh Government as part of the Iriaith project.*
+
+At ddiben gwerthuso'r project, mae rhestr o bob gair a'i fector cyfatebol ar gael fel a ganlyn:
+
+*For project evaluation purposes, a list of all words and their corresponding vectors is available using:*
 
 [Rhybudd: ~300k fector | Warning: ~300k vectors]
 
