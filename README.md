@@ -1,6 +1,6 @@
 # Model Iaith Fectorau Iriaith
 
-Model Iaith Fectorau Word2vec ar sail CYMES, Corpws Ymchwil Mewnol Enfawr Safonol yr Uned Technolegau Iaith a gasglwyd o ffynonellau amrywiol at ddibenion ymchwil fel cynhyrchu modelau iaith. |  A Word2vec Language Model based on CYMES, the Language Technologies Unit Standard Large Research Corpus which was collected from various sources for research purposes including the development of language models.
+Model Iaith Fectorau Word2vec Cymraeg ar sail CYMES, Corpws Ymchwil Mewnol Enfawr Safonol yr Uned Technolegau Iaith a gasglwyd o ffynonellau amrywiol at ddibenion ymchwil fel cynhyrchu modelau iaith. |  A Welsh Word2vec Language Model based on CYMES, the Language Technologies Unit Standard Large Research Corpus which was collected from various sources for research purposes including the development of language models.
 
 Gweler https://github.com/techiaith/word2vec-cy/tags am ffeil .bin y model.
 
@@ -27,6 +27,18 @@ similar_to_athro = model.most_similar(positive=['athro','dynes'],negative=["dyni
 # The top result should be 'athrawes' (female teacher) as subtracting 'dynion' substracts
 # both maleness and the plural aspect found in 'athrawon' (='teachers')
 print (similar_to_athro)
+
+# RESULTS
+# [('athrawes', 0.6252711415290833),
+#  ('ymarferwr', 0.5185580253601074),
+#  ('ymarferydd', 0.4801478385925293),
+#  ('tiwtor', 0.4783634543418884),
+#  ('aseswr', 0.47702139616012573),
+#  ('addysgwr', 0.46662962436676025),
+#  ('Athrawes', 0.4643784761428833),
+#  ('mentor', 0.4534262418746948),
+#  ('cymhorthydd', 0.44562190771102905),
+#  ('hyfforddai', 0.44232702255249023)]
 ```
 
 For a list of all words and their corresponding vectors:  
