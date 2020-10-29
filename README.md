@@ -1,6 +1,6 @@
 # Model Iaith Fectorau Cymraeg
 
-Model Iaith Fectorau Word2vec ar sail adnoddau ymchwil yr Uned Technolegau Iaith a gasglwyd o ffynonellau amrywiol
+Model Iaith Fectorau Word2vec ar sail adnoddau ymchwil yr Uned Technolegau Iaith a gasglwyd o ffynonellau amrywiol.
 
 *A Word2vec Language Model based on the Language Technologies Unit's research resources collected from various resources.*
 
@@ -47,9 +47,9 @@ print (similar_to_athro)
 #  ('hyfforddai', 0.44232702255249023)]
 ```
 
-Ariannwyd creu'r model hwn gan Lywodraeth Cymru fel rhan o broject Iriaith.
+Ariannwyd creu'r model hwn gan Lywodraeth Cymru.
 
-*The creation of this model was financed by the Welsh Government as part of the Iriaith project.*
+*The creation of this model was financed by the Welsh Government.*
 
 At ddiben gwerthuso'r project, mae rhestr o bob gair a'i fector cyfatebol ar gael fel a ganlyn:
 
