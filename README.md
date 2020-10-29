@@ -1,4 +1,4 @@
-# Model Iaith Fectorau Iriaith
+# Model Iaith Fectorau Cymraeg
 
 Model Iaith Fectorau Word2vec ar sail adnoddau ymchwil yr Uned Technolegau Iaith a gasglwyd o ffynonellau amrywiol
 
