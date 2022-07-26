@@ -4,13 +4,21 @@ Model Iaith Fectorau Word2vec ar sail adnoddau ymchwil yr Uned Technolegau Iaith
 
 *A Word2vec Language Model based on the Language Technologies Unit's research resources collected from various resources.*
 
-Gweler https://github.com/techiaith/word2vec-cy/tags am ffeil .bin y model.
+Gweler https://github.com/techiaith/word2vec-cy/tags a chlicio ar 'Latest' i gael at y data.
 
-*See https://github.com/techiaith/word2vec-cy/tags for the model's .bin file.*
+*See https://github.com/techiaith/word2vec-cy/tags and click on 'Latest' to access the data.*
 
-I'w ddefnyddio:
+NODYN: Mae'r model hwn ddwywaith yn fwy na'r model blaenorol (600k vs 300k), ond, oherwydd newidiadau i'r fersiwn ddiweddaraf o Gensim, nid oedd modd i ni hidlo geirffurfiau annilys ohono.  
+O ganlyniad, mae'r model yn cynnwys tocynnau fel 'Bangor1' a '•Darlithydd' nad ydynt yn cynrychioli geirffurfiau dilys.  
+Bwriadwn geisio datrys hyn yn y dyfodol. Yn y cyfamser, oherwydd y cynnydd ym maint y ffeil, dosbarthwn y 'Keyed Vectors' (y fectorau a'u hallweddi) yn hytrach na ffeil .bin y "model" go iawn.
 
-*To use:*
+*NOTE: This model is twice the size of the previous model (600k vs 300k), but, due to changes in the latest version of Gensim, some of this increase in size is because we have not been able to filter out non-valid wordforms.*  
+*As a result, the model includes vectors for tokens such as 'Bangor1' and '•Darlithydd' which do not represent valid wordforms.*  
+*We will attempt to mitigate this in future versions. In the meantime, due to the increase in the size of the files, we have changed to distributing the keyed vectors file rather than the true binary "model".*
+
+I'w ddefnyddio gyda Gensim 4:
+
+*To use with Gensim 4:*
 
 `pip install gensim`
 
@@ -22,9 +30,10 @@ Yna:
 import gensim
 from gensim.models import KeyedVectors
 
-model = KeyedVectors.load_word2vec_format('model_w2v_cy_0_1a.bin', binary=True)
+wv = KeyedVectors.load("word2vec.wordvectors", mmap='r')
 
-print ("MODEL SIZE:", len(model.vocab)) # 292,769
+print ("MODEL SIZE:", len(wv)) # 606,672
+
 
 # Find words that are similar to 'athro' (=male teacher)
 # whilst subtracting vectors associated with 'dynion' (='men')
@@ -51,13 +60,3 @@ Ariannwyd creu'r model hwn gan Lywodraeth Cymru.
 
 *The creation of this model was financed by the Welsh Government.*
 
-At ddiben gwerthuso'r project, mae rhestr o bob gair a'i fector cyfatebol ar gael fel a ganlyn:
-
-*For project evaluation purposes, a list of all words and their corresponding vectors is available using:*
-
-[Rhybudd: ~300k fector | Warning: ~300k vectors]
-
-```
-for word in enumerate(model.vocab):
-    print (word, model[word])
-```
