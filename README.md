@@ -8,13 +8,9 @@ Gweler https://github.com/techiaith/word2vec-cy/tags a chlicio ar 'Latest' i gae
 
 *See https://github.com/techiaith/word2vec-cy/tags and click on 'Latest' to access the data.*
 
-NODYN: Mae'r model hwn ddwywaith yn fwy na'r model blaenorol (600k vs 300k), ond, oherwydd newidiadau i'r fersiwn ddiweddaraf o Gensim, nid oedd modd i ni hidlo geirffurfiau annilys ohono.  
-O ganlyniad, mae'r model yn cynnwys tocynnau fel 'Bangor1' a '•Darlithydd' nad ydynt yn cynrychioli geirffurfiau dilys.  
-Bwriadwn geisio datrys hyn yn y dyfodol. Yn y cyfamser, oherwydd y cynnydd ym maint y ffeil, dosbarthwn y 'Keyed Vectors' (y fectorau a'u hallweddi) yn hytrach na ffeil .bin y "model" go iawn.
+NODYN: Mae ffurfiau'r model hwn bellach i gyd mewn llythrennau bach.
 
-*NOTE: This model is twice the size of the previous model (600k vs 300k), but, due to changes in the latest version of Gensim, some of this increase in size is because we have not been able to filter out non-valid wordforms.*  
-*As a result, the model includes vectors for tokens such as 'Bangor1' and '•Darlithydd' which do not represent valid wordforms.*  
-*We will attempt to mitigate this in future versions. In the meantime, due to the increase in the size of the files, we have changed to distributing the keyed vectors file rather than the true binary "model".*
+*NOTE: The forms found found in this model are now in lower case.*
 
 I'w ddefnyddio gyda Gensim 4:
 
@@ -32,28 +28,28 @@ from gensim.models import KeyedVectors
 
 wv = KeyedVectors.load("word2vec.wordvectors", mmap='r')
 
-print ("MODEL SIZE:", len(wv)) # 606,672
+print ("MODEL SIZE:", len(wv)) # 518,260
 
 
 # Find words that are similar to 'athro' (=male teacher)
 # whilst subtracting vectors associated with 'dynion' (='men')
-similar_to_athro = model.most_similar(positive=['athro','dynes'],negative=["dynion"], topn=10)
+similar_to_athro = wv.most_similar(positive=['athro','dynes'],negative=["dynion"], topn=10)
 
 # The top result should be 'athrawes' (female teacher) as subtracting 'dynion' substracts
 # both maleness and the plural aspect found in 'athrawon' (='teachers')
 print (similar_to_athro)
 
 # RESULTS
-# [('athrawes', 0.6252711415290833),
-#  ('ymarferwr', 0.5185580253601074),
-#  ('ymarferydd', 0.4801478385925293),
-#  ('tiwtor', 0.4783634543418884),
-#  ('aseswr', 0.47702139616012573),
-#  ('addysgwr', 0.46662962436676025),
-#  ('Athrawes', 0.4643784761428833),
-#  ('mentor', 0.4534262418746948),
-#  ('cymhorthydd', 0.44562190771102905),
-#  ('hyfforddai', 0.44232702255249023)]
+[('athrawes', 0.6490613222122192),
+('addysgwr', 0.4838572144508362),
+('ymarferydd', 0.4762175381183624),
+('ymarferwr', 0.4626823663711548),
+('aseswr', 0.462118536233902),
+('tiwtor', 0.4528316557407379),
+('hyfforddai', 0.4441806972026825),
+('mentor', 0.43711039423942566),
+('asesydd', 0.4269064962863922),
+('prifathrawes', 0.4217046797275543)]
 ```
 
 Ariannwyd creu'r model hwn gan Lywodraeth Cymru.
